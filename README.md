@@ -42,19 +42,98 @@ A comprehensive, web-based fitness application that generates personalized healt
 
 ## 🚀 Quick Start
 
-### **Option 1: Open Directly (Recommended)**
+### **Option 1: Open Directly (Simplest)**
 1. Download or clone this repository
 2. Open `index.html` in any modern web browser
 3. Start using the application immediately!
 
-### **Option 2: Local Development**
+### **Option 2: Local Development Server (Recommended)**
 1. Clone the repository:
    ```bash
    git clone [your-repository-url]
    cd fitness-health-planner
    ```
-2. Open `index.html` in your browser
-3. No build process or dependencies required!
+
+2. **Start a local server** (choose one method):
+
+   **Using Python 3 (Recommended):**
+   ```bash
+   python3 -m http.server 8000
+   ```
+
+   **Using Python 2:**
+   ```bash
+   python -m SimpleHTTPServer 8000
+   ```
+
+   **Using Node.js:**
+   ```bash
+   npx http-server -p 8000
+   ```
+
+   **Using PHP:**
+   ```bash
+   php -S localhost:8000
+   ```
+
+3. **Access your application:**
+   - Open your web browser
+   - Go to: `http://localhost:8000`
+   - The fitness app will load automatically
+
+4. **Stop the server when done:**
+   - Press `Ctrl+C` in the terminal where the server is running
+   - Or kill the process: `kill $(lsof -ti:8000)`
+
+## 🖥️ Local Development
+
+### **Why Use a Local Server?**
+
+Running the application on a local server provides several advantages:
+
+- **Better JavaScript functionality** - No `file://` protocol restrictions
+- **Proper CORS handling** - Prevents browser security issues
+- **Real development environment** - More like actual web deployment
+- **Better debugging** - Console errors and network requests work properly
+- **Professional workflow** - Standard practice for web development
+
+### **Quick Local Server Commands**
+
+**Navigate to your project directory:**
+```bash
+cd "/Users/work/Desktop/ERA V4/Assignemnt 2"
+```
+
+**Start server (Python 3):**
+```bash
+python3 -m http.server 8000
+```
+
+**Access your app:**
+- Open browser and go to: `http://localhost:8000`
+- Your fitness application will be live!
+
+**Stop server:**
+- Press `Ctrl+C` in the terminal
+
+### **Alternative Server Options**
+
+If Python isn't available, you can use:
+
+**Node.js (if installed):**
+```bash
+npx http-server -p 8000
+```
+
+**PHP (if installed):**
+```bash
+php -S localhost:8000
+```
+
+**Live Server (VS Code extension):**
+- Install "Live Server" extension
+- Right-click on `index.html`
+- Select "Open with Live Server"
 
 ## 📋 How to Use
 
