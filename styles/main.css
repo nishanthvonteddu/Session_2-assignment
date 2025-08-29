@@ -334,12 +334,50 @@ body {
     line-height: 1.6;
 }
 
+/* Action Buttons */
+.action-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    max-width: 400px;
+    margin: 40px auto 0;
+}
+
+.export-btn {
+    padding: 12px 24px;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+}
+
+.export-text-btn {
+    background: #4299e1;
+    color: white;
+}
+
+.export-text-btn:hover {
+    background: #3182ce;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(66, 153, 225, 0.3);
+}
+
+.export-pdf-btn {
+    background: #ed8936;
+    color: white;
+}
+
+.export-pdf-btn:hover {
+    background: #dd6b20;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 15px rgba(237, 137, 54, 0.3);
+}
+
 /* New Plan Button */
 .new-plan-btn {
-    display: block;
-    width: 100%;
-    max-width: 300px;
-    margin: 40px auto 0;
     padding: 15px 30px;
     background: #48bb78;
     color: white;
@@ -394,6 +432,11 @@ body {
     
     .calorie-number {
         font-size: 2.8rem;
+    }
+    
+    .action-buttons {
+        flex-direction: column;
+        gap: 10px;
     }
 }
 
