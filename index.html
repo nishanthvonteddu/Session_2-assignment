@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fitness Health Planner</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <header class="header">
+            <h1>🏃‍♂️ Fitness Health Planner</h1>
+            <p>Get your personalized health and fitness plan</p>
+        </header>
+
+        <main class="main-content">
+            <!-- User Input Form -->
+            <section id="user-input-section" class="form-section">
+                <h2>Tell Us About Yourself</h2>
+                <form id="fitness-form" class="fitness-form">
+                    <div class="form-group">
+                        <label for="age">Age</label>
+                        <input type="number" id="age" name="age" min="13" max="120" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="gender">Gender</label>
+                        <select id="gender" name="gender" required>
+                            <option value="">Select gender</option>
+                            <option value="male">Male</option>
+                            <option value="female">Female</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="height">Height (cm)</label>
+                        <input type="number" id="height" name="height" min="100" max="250" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="weight">Weight (kg)</label>
+                        <input type="number" id="weight" name="weight" min="30" max="300" step="0.1" required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="activity-level">Activity Level</label>
+                        <select id="activity-level" name="activityLevel" required>
+                            <option value="">Select activity level</option>
+                            <option value="sedentary">Sedentary (little or no exercise)</option>
+                            <option value="lightly-active">Lightly active (light exercise 1-3 days/week)</option>
+                            <option value="moderately-active">Moderately active (moderate exercise 3-5 days/week)</option>
+                            <option value="very-active">Very active (hard exercise 6-7 days/week)</option>
+                            <option value="extremely-active">Extremely active (very hard exercise, physical job)</option>
+                        </select>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="fitness-goal">Fitness Goal</label>
+                        <select id="fitness-goal" name="fitnessGoal" required>
+                            <option value="">Select your goal</option>
+                            <option value="weight-loss">Weight Loss</option>
+                            <option value="weight-gain">Weight Gain</option>
+                            <option value="lean-body">Lean Body (Maintain/Tone)</option>
+                        </select>
+                    </div>
+
+                    <button type="submit" class="submit-btn">Generate My Health Plan</button>
+                </form>
+            </section>
+
+            <!-- Results Section -->
+            <section id="results-section" class="results-section hidden">
+                <h2>Your Personalized Health Plan</h2>
+                
+                <!-- Basic Info -->
+                <div class="info-card">
+                    <h3>📊 Your Health Metrics</h3>
+                    <div class="metrics-grid">
+                        <div class="metric">
+                            <span class="metric-label">BMI</span>
+                            <span id="bmi-value" class="metric-value">-</span>
+                            <span id="bmi-category" class="metric-category">-</span>
+                        </div>
+                        <div class="metric">
+                            <span class="metric-label">BMR</span>
+                            <span id="bmr-value" class="metric-value">-</span>
+                            <span class="metric-unit">calories/day</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Daily Calories -->
+                <div class="info-card">
+                    <h3>🔥 Daily Calorie Target</h3>
+                    <div class="calorie-display">
+                        <span id="daily-calories" class="calorie-number">-</span>
+                        <span class="calorie-unit">calories/day</span>
+                    </div>
+                </div>
+
+                <!-- Macronutrients -->
+                <div class="info-card">
+                    <h3>🍽️ Macronutrient Breakdown</h3>
+                    <div class="macro-grid">
+                        <div class="macro-item protein">
+                            <div class="macro-header">
+                                <span class="macro-icon">🥩</span>
+                                <span class="macro-name">Protein</span>
+                            </div>
+                            <div class="macro-amount">
+                                <span id="protein-grams">-</span>g
+                            </div>
+                            <div class="macro-percentage">
+                                <span id="protein-percentage">-</span>%
+                            </div>
+                        </div>
+                        <div class="macro-item carbs">
+                            <div class="macro-header">
+                                <span class="macro-icon">🍞</span>
+                                <span class="macro-name">Carbs</span>
+                            </div>
+                            <div class="macro-amount">
+                                <span id="carbs-grams">-</span>g
+                            </div>
+                            <div class="macro-percentage">
+                                <span id="carbs-percentage">-</span>%
+                            </div>
+                        </div>
+                        <div class="macro-item fat">
+                            <div class="macro-header">
+                                <span class="macro-icon">🥑</span>
+                                <span class="macro-name">Fat</span>
+                            </div>
+                            <div class="macro-amount">
+                                <span id="fat-grams">-</span>g
+                            </div>
+                            <div class="macro-percentage">
+                                <span id="fat-percentage">-</span>%
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Physical Activity -->
+                <div class="info-card">
+                    <h3>💪 Physical Activity Recommendations</h3>
+                    <div id="activity-recommendations" class="activity-content">
+                        <!-- Activity recommendations will be populated here -->
+                    </div>
+                </div>
+
+                <!-- Timeline -->
+                <div class="info-card">
+                    <h3>⏰ Estimated Timeline</h3>
+                    <div id="timeline-estimate" class="timeline-content">
+                        <!-- Timeline will be populated here -->
+                    </div>
+                </div>
+
+                <!-- Lifestyle Tips -->
+                <div class="info-card">
+                    <h3>💧 Lifestyle Recommendations</h3>
+                    <div class="lifestyle-grid">
+                        <div class="lifestyle-item">
+                            <h4>💧 Water Intake</h4>
+                            <p id="water-intake">-</p>
+                        </div>
+                        <div class="lifestyle-item">
+                            <h4>😴 Sleep</h4>
+                            <p id="sleep-recommendation">-</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Nutrients -->
+                <div class="info-card">
+                    <h3>🌿 Important Nutrients</h3>
+                    <div id="nutrients-list" class="nutrients-content">
+                        <!-- Nutrients will be populated here -->
+                    </div>
+                </div>
+
+                <!-- Health Tips -->
+                <div class="info-card">
+                    <h3>💡 General Health Tips</h3>
+                    <div id="health-tips" class="tips-content">
+                        <!-- Health tips will be populated here -->
+                    </div>
+                </div>
+
+                <button id="new-plan-btn" class="new-plan-btn">Create New Plan</button>
+            </section>
+        </main>
+
+        <footer class="footer">
+            <p>&copy; 2024 Fitness Health Planner. Built with ❤️ for better health.</p>
+        </footer>
+    </div>
+
+    <script src="scripts/data.js"></script>
+    <script src="scripts/calculations.js"></script>
+    <script src="scripts/app.js"></script>
+</body>
+</html>
