@@ -39,7 +39,7 @@ yarn-error.log*
 package-lock.json
 yarn.lock
 
-# Python (if using in future)
+# Python
 __pycache__/
 *.py[cod]
 *$py.class
@@ -61,6 +61,17 @@ wheels/
 .installed.cfg
 *.egg
 MANIFEST
+
+# Database files
+*.db
+*.sqlite
+*.sqlite3
+fitness_planner.db
+
+# Environment files
+.env
+.env.local
+.env.production
 
 # Logs
 logs
