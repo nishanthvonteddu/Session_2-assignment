@@ -72,7 +72,8 @@ Fitness Health Planner is a simple, privacy-first web app that helps users creat
    Using Python 3:
 
    ```bash
-   python3 -m http.server 8000
+   cd backend
+   pip install -r requirements.txt
    ```
 
    Using Python 2:
